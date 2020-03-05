@@ -3033,13 +3033,22 @@
 	<!--
 	  <span amp-access="NOT loggedIn AND presupuesto_local"
 			class="inline-block ml1">...para ver el análisis de factibilidad</span>
-	-->
+
+        <button amp-access="loggedIn"
+          tabindex="0"
+          on="tap:amp-access.login-destroy-reader,AMP.setState({ dueno: { invisible: true },  presupuesto: { iniciado: 0 }  })"
+          class="ampstart-btn ml1 caps"
+          amp-access-hide>Cerrar la Sesión
+        </button>
+        -->
+
+
 
 	<button amp-access="loggedIn"
 	  tabindex="0"
-	  on="tap:amp-access.login-destroy-reader,AMP.setState({ dueno: { invisible: true },  presupuesto: { iniciado: 0 }  })"
+	  on="tap:amp-access.login-sign-out,AMP.setState({ dueno: { invisible: true },  presupuesto: { iniciado: 0 }  })"
 	  class="ampstart-btn ml1 caps"
-	  amp-access-hide>Elimine la Cuenta
+	  amp-access-hide>Cerrar la Sesión
 	</button>
       </div>
 
