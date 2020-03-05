@@ -2015,9 +2015,9 @@
 
 	      <p class="price-description"> Seleccionado:
 		<span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span> </p>
-
+               <!--
                 on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh,carrusel-list.show,boton-login.show"
-
+              -->
 	      <form id="order"
 		method="POST"
 		action-xhr="https://backend.alectrica.cl/api/v1/electrico/circuitos/addToCircuito.json" 
