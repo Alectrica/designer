@@ -2016,10 +2016,8 @@
 	      <p class="price-description"> Seleccionado:
 		<span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span> </p>
 
-	      <!--
                 on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh,carrusel-list.show,boton-login.show"
 
-	      -->
 	      <form id="order"
 		method="POST"
 		action-xhr="https://backend.alectrica.cl/api/v1/electrico/circuitos/addToCircuito.json" 
@@ -2991,7 +2989,6 @@
       </template>
 
       <div class="my2">
-	<!--
         <button 
 	  hidden
 	  [hidden] = "presupuesto.Iniciado == 1 ? false : true"
@@ -3009,7 +3006,6 @@
         </span> 
          on="tap:amp-access.login-sign-up,AMP.setState({cuenta: {solicitada: true}}),AMP.setState({registro_usuario: {iniciado: 1}})"
           amp-access-hide
-	-->
 
 
         <button amp-access="NOT loggedIn" 
@@ -3025,7 +3021,6 @@
 
       <div class="my2">
 
-	<!--
 	<button amp-access="NOT loggedIn" 
 	  on="tap:amp-access.login-sign-in, carrusel-list.refresh"
 	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión
@@ -3033,7 +3028,6 @@
 	
 	<span amp-access="NOT loggedIn">... para analizar sus circuitos
 	</span>
-        -->	 
 	<!--
 	  <span amp-access="NOT loggedIn AND presupuesto_local"
 			class="inline-block ml1">...para ver el análisis de factibilidad</span>
