@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://bat.alectrico.cl/sitemap.xml
+Sitemap: https://designer.alectrico.cl/sitemap.xml
