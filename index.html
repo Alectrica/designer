@@ -2334,13 +2334,20 @@
 
                 <form method   = "POST"
                    class = "close-gallery-button"
-                    action-xhr = "https://www.backendmacarron.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)" 
+                    action-xhr = "https://www.backendmacarron.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json" 
                     target    = "_top"
                     on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
                    <input name = "clientId" 
                        type = "hidden" 
                        value = "CLIENT_ID(uid)" 
                        data-amp-replace = "CLIENT_ID">
+
+                   <input name = "rid" 
+                       type = "hidden" 
+                       value = "CLIENT_ID(amp-access)" 
+                       data-amp-replace = "CLIENT_ID">
+
+
                        <button  type = "submit" >X</button>
                 </form>
               </amp-img>
@@ -2416,13 +2423,22 @@
 
 		<form method   = "POST"
 		   class = "close-gallery-button"
-		    action-xhr = "https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)" 
+		    action-xhr = "https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json" 
 		    target    = "_top"
 		    on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
 		   <input name = "clientId" 
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
 		       data-amp-replace = "CLIENT_ID">
+
+
+                   <input name = "rid" 
+                       type = "hidden" 
+                       value = "CLIENT_ID(amp-access)" 
+                       data-amp-replace = "CLIENT_ID">
+
+
+
 		       <button  type = "submit" >X</button>
 		</form>
               </amp-img>
@@ -2544,7 +2560,7 @@
 	   {{#presupuesto_remoto}}
              <form id="sync"
                 method="POST"
-                action-xhr="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/syncFromRemote.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)" 
+                action-xhr="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/syncFromRemote.json" 
                 target="_top"
 		on="submit-success:AMP.setState({inicial: { invisible: true}, presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh,cart-list.refresh"
                 class="flex flex-wrap m1">
@@ -2553,10 +2569,18 @@
 		    name  = "syncFromRemote"
 		    value = true
 		    [value] = true>
+
                 <input data-amp-replace='CLIENT_ID' 
 		    name='clientId' 
 		    type='hidden' 
 		    value='CLIENT_ID(uid)'>
+
+
+                   <input name = "rid" 
+                       type = "hidden" 
+                       value = "CLIENT_ID(amp-access)" 
+                       data-amp-replace = "CLIENT_ID">
+
 
 		<div class="my2">
 		    <button amp-access="loggedIn" 
