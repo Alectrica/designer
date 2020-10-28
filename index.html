@@ -2020,7 +2020,7 @@
               -->
 	      <form id="order"
 		method="POST"
-		action-xhr="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/addToCircuito.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)"  
+		action-xhr="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/addToCircuito.json"  
 		target="_top"
 		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh, ocupacion-list.refresh"
 		class="flex flex-wrap m1">
@@ -2262,6 +2262,15 @@
 	    type="hidden"
 	    value="CLIENT_ID(uid)"
 	    data-amp-replace="CLIENT_ID">
+
+          <input
+               name='rid'
+               type='hidden'
+               value="CLIENT_ID(amp-access)"
+               data-amp-replace="CLIENT_ID"/>
+
+
+
 	  <div submit-success>
 	    <template type="amp-mustache">
 	      {{error}}
