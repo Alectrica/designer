@@ -2020,7 +2020,7 @@
               -->
 	      <form id="order"
 		method="POST"
-		action-xhr="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/addToCircuito.json" 
+		action-xhr="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/addToCircuito.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)"  
 		target="_top"
 		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh, ocupacion-list.refresh"
 		class="flex flex-wrap m1">
@@ -2325,7 +2325,7 @@
 
                 <form method   = "POST"
                    class = "close-gallery-button"
-                    action-xhr = "https://www.backendmacarron.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+                    action-xhr = "https://www.backendmacarron.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)" 
                     target    = "_top"
                     on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
                    <input name = "clientId" 
@@ -2407,7 +2407,7 @@
 
 		<form method   = "POST"
 		   class = "close-gallery-button"
-		    action-xhr = "https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+		    action-xhr = "https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)" 
 		    target    = "_top"
 		    on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
 		   <input name = "clientId" 
@@ -2535,7 +2535,7 @@
 	   {{#presupuesto_remoto}}
              <form id="sync"
                 method="POST"
-                action-xhr="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/syncFromRemote.json"
+                action-xhr="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/syncFromRemote.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)" 
                 target="_top"
 		on="submit-success:AMP.setState({inicial: { invisible: true}, presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh,cart-list.refresh"
                 class="flex flex-wrap m1">
@@ -2688,7 +2688,7 @@
 	    items       = "."
 	    single-item
 	    layout      = "fixed-height"
-	    src         = "https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/ocupacion.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	    src         = "https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/ocupacion.json??auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)&clientId=CLIENT_ID(uid)&_=RANDOM"
 	    id          = "ocupacion-list">
 	    <div overflow = "" class = "list-overflow">VER MÁS</div>
 	  </amp-list>
@@ -2721,7 +2721,7 @@
                           [hidden] = "{{seguro}}"
                           layout="fixed"
                           width="15" height="15"
-                          src="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/atencion.json" >
+                          src="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/atencion.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)" >
                         </amp-bodymovin-animation>
 			<strong>{{tipo_circuito.capacidad}} Amperes </strong>
 			<progress 
@@ -2746,7 +2746,7 @@
                       [hidden] = "{{seguro}}"
                       layout="fixed"
                       width="10" height="10"
-                      src="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/atencion.json" >
+                      src="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/atencion.json?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)"  >
                     </amp-bodymovin-animation>
 
 		     <div>
@@ -2776,7 +2776,7 @@
 	  items="."
 	  single-item
 	  layout="fixed-height"
-	  src="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	  src="https://backendmacarron.alectrica.cl/api/v1/electrico/circuitos/get.json??auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTHDATA(macarron_de_autorizacion)&CLIENT_ID(uid)&_=RANDOM"
 	  id="cart-list">
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
