@@ -562,6 +562,14 @@
       align-items: center;
     }
 
+
+    .close-list-button {
+      z-index: 1;
+      position: absolute;
+      right: 0;
+    }
+
+
     amp-selector [option][selected] {
       outline: #fff;
     }
@@ -2066,6 +2074,7 @@
       [{ 
          id: product[product.selectedColor].ids[      product.selectedSlide],
      nombre: product[product.selectedColor].nombres[  product.selectedSlide],
+   circuito: product[product.selectedColor].circuitos[product.selectedSlide],
         img: product[product.selectedColor].imagenes[ product.selectedSlide]          }]   )
  } ),
  item-list.refresh "
@@ -2875,6 +2884,7 @@
             binding="no"
             [src] = "itemsSrc"
             id="item-list" >
+
           <template type="amp-mustache">
               <amp-img width="100" 
                 tabindex = 0
@@ -2891,7 +2901,7 @@
                 </div>
                 <div>
                   <button
-                  class="mb1 precio-label">{{nombre}}
+                  class="mb1 precio-label">{{circuito}}
                 </div>
               </amp-img>
             </template>
