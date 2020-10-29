@@ -2109,7 +2109,7 @@
               </button>
 
         <p class="price-description"> Potencia Total Aparente:
-          <span [text]=" (values( itemsSrc.concat([0])).map( (x,i) => x.watt ).reduce( (acumulador, valor_actual) => acumulador + valor_actual )*0.001).toFixed(3).concat('Watts')" >
+          <span [text]=" (values( itemsSrc.concat([0])).map( (x,i) => x.watt ).reduce( (acumulador, valor_actual) => acumulador + valor_actual )*0.001).toFixed(3).concat(' kWatt')" >
              $ 0 Watts
           </span>
        </p>
