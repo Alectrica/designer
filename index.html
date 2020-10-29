@@ -2045,7 +2045,7 @@
 		      },
                       "watts": {
                         "0": 4500,
-                        "1": 2200
+                        "1": 6000
                       },
 		      "nombres": {
 			"0": "Cocina Encimera Vitrocerámica.",
@@ -2103,9 +2103,19 @@
    circuito: product[product.selectedColor].circuitos[product.selectedSlide],
         img: product[product.selectedColor].imagenes[ product.selectedSlide]          }]   )
  } ),
+ 
  item-list.refresh "
                 class="ampstart-btn caps m2 agregar-gallery-button">Agregar
               </button>
+
+        <p class="price-description"> Potencia Total Aparente:
+          <span [text]=" (values( itemsSrc.concat([0])).map( (x,i) => x.watt ).reduce( (acumulador, valor_actual) => acumulador + valor_actual )*0.001).toFixed(3).concat('Watts')" >
+             $ 0 Watts
+          </span>
+       </p>
+
+
+
 
 
               <div>
@@ -2936,10 +2946,12 @@
                     class="close-list-button">X
                   </button>
                 </div>
+                <!--
                 <div>
                   <button
                   class="mb1 precio-label">{{watt}}
                 </div>
+               -->
               </amp-img>
             </template>
           </amp-list>
