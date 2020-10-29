@@ -2812,7 +2812,7 @@
 
 
 
-      <section amp-access="loggedIn" 
+      <section amp-access="auth_token and loggedIn" 
         id= "resumen" 
 	class = "my2"
         amp-access-hide = "" >
@@ -2947,9 +2947,8 @@
         <!-- product-gallery -->
 
 
-       <section>
+       <section amp-access="auth_token and loggedIn" amp-access-hide>
         <amp-list 
-	  hidden
           template="cart-list-template"
 	  credentials="include"
 	  width="auto"
@@ -3169,7 +3168,7 @@
 	</div>
       </template>
 
-      <div class="my2">
+      <div amp-access="auth_token" class="my2">
         <button 
 	  hidden
 	  [hidden] = "presupuesto.Iniciado == 1 ? false : true",
@@ -3191,25 +3190,28 @@
           amp-access-hide
          -->
 
-        <button amp-access="NOT loggedIn" 
+        <button amp-access="auth_token NOT loggedIn" 
 	  on = "tap:amp-access.login-create-token,AMP.setState({cuenta: {solicitada: true}, presupuesto: {iniciado: 1}})"
 	  tabindex="0"
-	  class="ampstart-btn ml1 caps" >Cree una Cuenta
+	  class="ampstart-btn ml1 caps" amp-access-hide >Cree una Cuenta
 	</button>
 
-	<span amp-access= "NOT subscriber AND NOT loggedIn"  [hidden] = cuenta.solicitada	  >... para guardar su trabajo
+	<span amp-access= "NOT subscriber AND NOT loggedIn"
+              [hidden] = cuenta.solicitada amp-access-hide >... para guardar su trabajo
 	</span>
 
       </div>
 
       <div class="my2">
 
-	<button amp-access="NOT loggedIn" 
+	<button amp-access="auth-token AND NOT loggedIn" 
 	  on="tap:amp-access.login-sign-in, carrusel-list.refresh"
-	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps"
+          amp-access-hide>Inicie sesión
 	</button>
 	
-	<span amp-access="NOT loggedIn">... para analizar sus circuitos
+	<span amp-access="auth_token AND NOT loggedIn"
+          amp-access-hide>... para analizar sus circuitos
 	</span>
 	<!--
 	  <span amp-access="NOT loggedIn AND presupuesto_local"
@@ -3225,7 +3227,7 @@
 
 
 
-	<button amp-access="loggedIn"
+	<button amp-access="authtoken and loggedIn"
 	  tabindex="0"
 	  on="tap:amp-access.login-sign-out,AMP.setState({ dueno: { invisible: true },  presupuesto: { iniciado: 0 }  })"
 	  class="ampstart-btn ml1 caps"
@@ -3238,6 +3240,7 @@
 	  hidden
 	  amp-access='NOT loggedIn'
 	  [hidden] =  "cuenta.solicitada ? false : true"
+          amp-access-hide
 	  >
 
 	  <!---
