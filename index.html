@@ -2164,7 +2164,8 @@
 		  </amp-selector>
 		</div>
 
-		<div class="items-center flex">
+		<div amp-access="auth_token and loggedIn" 
+                  class="items-center flex" amp-access-hide>
 		  <label for="quantity">Cantidad:</label>
 		  <amp-selector name="quantity"
 		    layout="container">
@@ -2335,10 +2336,16 @@
 	 <!-- fin de Galería de Productos -->
 
 	  <div class="items-center flex my1 ml1">
-	    <input type="submit"
+
+	    <input amp-access="auth_token and loggedIn"
+              type="submit"
 	      class="ampstart-btn caps"
 	      name="  Agregar  "
-	      value="  Agregar  ">
+	      value="  Agregar  "
+              amp-access-hide
+            >
+
+
 	  </div>
 	  <input type="hidden"
 	    name="carga_id"
