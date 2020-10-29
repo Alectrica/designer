@@ -2369,7 +2369,7 @@
 	checkout-section
         src="https://backendmacarron.alectrica.cl/todos/1/items/?auth_token=AUTHDATA(auth_token)"  
 	-->
-	<section>
+	<section amp-access="auth_token AND loggedIn" amp-access-hide>
 	  <amp-list
 	    template = "items-list-template"
 	    credentials = "omit"
