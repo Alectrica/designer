@@ -1814,7 +1814,6 @@
 			"4": "",
 			"5": "",
 			"6": ""
-
 			},
 		      "nombres": {
 			"0": "Visita a Domicilio de Instalador Eléctrico Autorizado SEC.",
@@ -1825,6 +1824,15 @@
 			"5": "Instalación de Enchufes.",
 			"6": "Certificación TE1 de Instalaciones Eléctricas."
 		      },
+                      "imagenes": {
+                        "0": "led.png",
+                        "1": "led.png",
+                        "2": "led.png",
+                        "3": "led.png",
+                        "4": "led.png",
+                        "5": "led.png",
+                        "6": "led.png"
+                      },
 		      "circuitos": {
 			"0": "I",
 			"1": "I",
@@ -1860,6 +1868,10 @@
 			"0": "Ampolleta Led.",
 			"1": "Ampolleta Incandescente."
 		      },
+                      "imagenes": {
+                        "0": "led.png",
+                        "1": "led.png"
+                      },
 		      "circuitos": {
 			"0": "I",
 			"1": "I"
@@ -1899,6 +1911,14 @@
 			"5": "Cafetera Expresso"
 
 		      },
+                      "imagenes": {
+                        "0": "led.png",
+                        "1": "led.png",
+                        "2": "led.png",
+                        "3": "led.png",
+                        "4": "led.png",
+                        "5": "led.png"
+                      },
 		      "circuitos":{
 			"0": "M",
 			"1": "M",
@@ -1949,6 +1969,17 @@
 			"7": "Splitter.",
 			"8": "Computador"
 		      },
+                      "imagenes": {
+                        "0": "led.png",
+                        "1": "led.png",
+                        "2": "led.png",
+                        "3": "led.png",
+                        "4": "led.png",
+                        "5": "led.png",
+                        "6": "led.png",
+                        "7": "led.png",
+                        "8": "led.png"
+                      },
 		      "circuitos": {
 			"0": "N",
 			"1": "R",
@@ -1987,10 +2018,13 @@
 			"0": "Cocina Encimera Vitrocerámica.",
 			"1": "Cocina Encimera Inducción."
 		      },
+                      "imagenes": {
+                        "0": "led.png",
+                        "1": "led.png"
+                      },
 		      "circuitos": {
 			"0": "E",
 			"1": "E"
-
 		      },
 		      "potencias": {
 			"I": "inadecuado",
@@ -2024,6 +2058,20 @@
 		target="_top"
 		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh, ocupacion-list.refresh"
 		class="flex flex-wrap m1">
+
+              <button 
+                on="tap:AMP.setState(
+ { itemsSrc:
+   itemsSrc.concat(
+      [{ 
+         id: product[product.selectedColor].ids[      product.selectedSlide],
+     nombre: product[product.selectedColor].nombres[  product.selectedSlide],
+        img: product[product.selectedColor].imagenes[ product.selectedSlide]          }]   )
+ } ),
+ item-list.refresh "
+                class="ampstart-btn caps m2 agregar-gallery-button">Agregar
+              </button>
+
 
               <div>
 
@@ -2384,12 +2432,15 @@
 	    width="auto"
 	    height="145"
 	    items = "."
+            id="carrusel-list"
 	    single-item
 	    layout="fixed-height"
             src="https://backendmacarron.alectrica.cl/todos/1/items/?auth_token=AUTHDATA(auth_token)&macarron_de_autorizacion=AUTH_DATA(macarron_de_autorizacion)"
-	    id="carrusel-list">
+	    >
+
 	    <div>
             </div>
+
             <div overflow = ""  class = "list-overflow">VER MÁS </div>
             <div placeholder>Cargando la lista de electrodomésticos ...</div>
             <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
@@ -2420,6 +2471,15 @@
 		aria-describedby = "caption"
 		alt="{{cantidad}}"
 		src="{{img}}">
+
+                <div>
+                  <button
+                    on="tap:AMP.setState({itemsSrc: itemsSrc.filter(a => a.id != {{id}})}),item-list.refresh"
+                    class="close-list-button">Y
+                  </button>
+                </div>
+
+
 
 		<form method   = "POST"
 		   class = "close-gallery-button"
@@ -2798,6 +2858,47 @@
 	  </template>
 
        </section>
+
+        <amp-state id="itemsSrc">
+          <script type="application/json">
+            [
+            ]
+          </script>
+        </amp-state>
+
+        <div class="product-gallery">
+          <amp-list
+            class="mt3"
+            layout="fixed-height"
+            height= 190
+            items = "."
+            binding="no"
+            [src] = "itemsSrc"
+            id="item-list" >
+          <template type="amp-mustache">
+              <amp-img width="100" 
+                tabindex = 0
+                height="90" 
+                layout="fixed"
+                aria-describedby = "{{nombre}}"
+                alt="{{nombre}}"
+                src="{{img}}">
+                <div>
+                  <button
+                    on="tap:AMP.setState({itemsSrc: itemsSrc.filter(a => a.id != {{id}})}),item-list.refresh"
+                    class="close-list-button">X
+                  </button>
+                </div>
+                <div>
+                  <button
+                  class="mb1 precio-label">{{nombre}}
+                </div>
+              </amp-img>
+            </template>
+          </amp-list>
+        </div>
+        <!-- product-gallery -->
+
 
        <section>
         <amp-list 
