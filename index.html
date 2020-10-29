@@ -2099,6 +2099,7 @@
       [{ 
          id: product[product.selectedColor].ids[      product.selectedSlide],
      nombre: product[product.selectedColor].nombres[  product.selectedSlide],
+       watt: product[product.selectedColor].watts[    product.selectedSlide],
    circuito: product[product.selectedColor].circuitos[product.selectedSlide],
         img: product[product.selectedColor].imagenes[ product.selectedSlide]          }]   )
  } ),
@@ -2401,6 +2402,7 @@
 	</section>
 
 	<template 
+          hidden
 	  type = "amp-mustache"
 	  id = "items-list-template" >
 	   {{^items}}
