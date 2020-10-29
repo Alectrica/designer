@@ -2458,7 +2458,8 @@
 	   {{/items}}
 	</template>
 
-        <section>	
+        <section amp-access="auth_token AND loggedIn" amp-access-hide>
+	
 	  <amp-list 
 	    hidden
 	    template = "carrusel-list-template"
