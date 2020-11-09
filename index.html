@@ -2108,11 +2108,15 @@
                 class="ampstart-btn caps m2 agregar-gallery-button">Agregar
               </button>
 
-        <p class="price-description"> Potencia Total Aparente:
+        <p class="price-description"> Potencia Activa Total:
           <span [text]=" (values( itemsSrc.concat([0])).map( (x,i) => x.watt ).reduce( (acumulador, valor_actual) => acumulador + valor_actual )*0.001).toFixed(3).concat(' kWatt')" >
              0 Watts
           </span>
        </p>
+       <p class="price-description"> Es lo que se aprovecha como potencia útil
+        
+       </p>
+
 
 
 
