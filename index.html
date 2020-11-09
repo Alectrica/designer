@@ -3200,7 +3200,7 @@
           amp-access-hide
          -->
 
-        <button amp-access="auth_token NOT loggedIn" 
+        <button amp-access="auth_token AND NOT loggedIn" 
 	  on = "tap:amp-access.login-create-token,AMP.setState({cuenta: {solicitada: true}, presupuesto: {iniciado: 1}})"
 	  tabindex="0"
 	  class="ampstart-btn ml1 caps" amp-access-hide >Cree una Cuenta
