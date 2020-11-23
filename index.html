@@ -1455,7 +1455,7 @@
 		  layout="responsive"
 		  type="slides"
 		  [slide]="product.selectedSlideForGreen"
-		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGreen: event.index}})"
+		  on="slideChange: AMP.setState({product: {selectedSlide: 0, selectedSlideForGreen: 0}})"
 		  class="fadeIn"
 		  [hidden]="product.selectedColor != 'green'">
 
@@ -1484,7 +1484,7 @@
 		  layout="responsive"
 		  type="slides"
 		  [slide]="product.selectedSlideForGolden"
-		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
+		  on="slideChange: AMP.setState({product: {selectedSlide: 1, selectedSlideForGolden: 1}})"
 		  hidden
 		  class="fadeIn"
 		  [hidden]="product.selectedColor != 'golden'">
