@@ -109,7 +109,7 @@
 
     <script async custom-element="amp-bodymovin-animation" src="https://cdn.ampproject.org/v0/amp-bodymovin-animation-0.1.js"></script>
     <script async custom-element="amp-access"   src="https://cdn.ampproject.org/v0/amp-access-0.1.js"></script>
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
@@ -1455,7 +1455,7 @@
 		  layout="responsive"
 		  type="slides"
 		  [slide]="product.selectedSlideForGreen"
-		  on="slideChange: AMP.setState({product: {selectedSlide: 0, selectedSlideForGreen: 0}})"
+		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGreen: event.index}})"
 		  class="fadeIn"
 		  [hidden]="product.selectedColor != 'green'">
 
@@ -1484,7 +1484,7 @@
 		  layout="responsive"
 		  type="slides"
 		  [slide]="product.selectedSlideForGolden"
-		  on="slideChange: AMP.setState({product: {selectedSlide: 1, selectedSlideForGolden: 1}})"
+		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
 		  hidden
 		  class="fadeIn"
 		  [hidden]="product.selectedColor != 'golden'">
