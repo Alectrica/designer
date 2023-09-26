@@ -1449,6 +1449,17 @@
 		  </div>
 
 
+<amp-state id="green">
+  <script type="application/json">
+    {
+      "350x350"    : "http://via.placeholder.com/350x350",
+      "incandescente"  : "https://storage.googleapis.com/alectrica/img/ampolleta_incandescente.png",
+      "amigdalitis": "https://storage.googleapis.com/alectrica/img/sintomas/dolores_de_garganta_01.jpeg",
+      "secreciones": "https://storage.googleapis.com/alectrica/img/sintomas/secreciones_nasales_01.jpg"
+    }
+  </script>
+</amp-state>
+
 
 
 		</amp-carousel>
@@ -1478,6 +1489,7 @@
 		    layout="responsive"
 		    on="tap:gallery-lightbox"
 		    role="button"
+		    [src]="green.incandescente"
 		    tabindex="0">
 		  </amp-img>
 		</amp-carousel>
