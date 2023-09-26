@@ -1449,6 +1449,14 @@
 
 		  </div>
 
+<amp-state id="json">
+  <script type="application/json">
+    {
+      "catalogo"        : "https://storage.googleapis.com/alectrica/catalogo.json"
+    }
+  </script>
+</amp-state>
+
 
 <amp-state id="green">
   <script type="application/json">
@@ -1804,7 +1812,8 @@
        	      </amp-state>
 
              <amp-state id="product"
-                src= "https://www.alectrico.cl/api/v1/electrico/circuitos/catalogo.json"  >
+	         src= "https://storage.googleapis.com/alectrica/catalogo.json"
+		[src]= "json.catalogo" >
               </amp-state>
 
 
