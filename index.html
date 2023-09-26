@@ -1462,10 +1462,10 @@
   <script type="application/json">
     {
       "350350"        : "http://via.placeholder.com/350x350",
-      "led"            : "https://storage.googleapis.com/alectrica/img/led.png",
-      "incandescente"  : "https://storage.googleapis.com/alectrica/img/ampolleta_incandescente.png",
-      "amigdalitis"    : "https://storage.googleapis.com/alectrica/img/sintomas/dolores_de_garganta_01.jpeg",
-      "secreciones"    : "https://storage.googleapis.com/alectrica/img/sintomas/secreciones_nasales_01.jpg"
+      "led"            : "https://assets.alectrica.cl/img/led.png",
+      "incandescente"  : "https://assets.alectrica.cl/img/ampolleta_incandescente.png",
+      "amigdalitis"    : "https://assets.alectrica.cl/img/sintomas/dolores_de_garganta_01.jpeg",
+      "secreciones"    : "https://assets.alectrica.cl/img/sintomas/secreciones_nasales_01.jpg"
     }
   </script>
 </amp-state>
@@ -1490,6 +1490,7 @@
 		    layout="responsive"
 		    on="tap:gallery-lightbox"
 		    role="button"
+                    [src]="green.led ? green.led : 350350 "
 		    tabindex="0">
 		  </amp-img>
 
@@ -1812,7 +1813,7 @@
        	      </amp-state>
 
              <amp-state id="product"
-			src="https://assets.alectrica.clcatalogo.json" >
+			src="https://assets.alectrica.cl/catalogo.json" >
               </amp-state>
 
 
